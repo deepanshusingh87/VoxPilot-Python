@@ -3,7 +3,7 @@ from assistant.commands import process_command
 
 
 def main():
-    speak("VoxPilot is ready.")
+    speak("VoxPilot is running. I am ready.")
 
     while True:
         command = listen()
@@ -11,11 +11,7 @@ def main():
         if not command:
             continue
 
-        if (
-            "exit voxpilot" in command
-            or "stop voxpilot" in command
-            or "goodbye" in command
-        ):
+        if command in ["exit", "stop", "goodbye"]:
             speak("Goodbye. Shutting down VoxPilot.")
             break
 
